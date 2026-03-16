@@ -13,6 +13,7 @@ import {
   Moon,
   TextCursor,
   BookOpen,
+  Accessibility,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -84,7 +85,9 @@ export default function AccessibilityMenu() {
 
   return (
     <div className="accessibility-widget">
-      <button className="accessibility-trigger" onClick={() => setOpen(!open)}>⚡</button>
+      <button className="accessibility-trigger" onClick={() => setOpen(!open)}>
+        <Accessibility size={24} />
+      </button>
 
       <div className={cn("accessibility-drawer", open && "open")}>
         <div className="flex justify-between items-center mb-3">
