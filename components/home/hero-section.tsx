@@ -1,49 +1,113 @@
+"use client"
+
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { motion, AnimatePresence } from "framer-motion"
+
+const images = [
+  "/images/hero-care.jpg",
+  "/images/shine-van-1.jpg",
+  "/images/shine-van-2.jpg",
+]
 
 export function HeroSection() {
-  return (
-    <section className="relative overflow-hidden bg-primary">
-      <div className="absolute inset-0">
-        <Image
-          src="/images/hero-transport.jpg"
-          alt="Professional medical transport vehicle outside hospital"
-          fill
-          className="object-cover opacity-25"
-          priority
-        />
-        <div className="absolute inset-0 bg-primary/60" />
-      </div>
+  const [index, setIndex] = useState(0)
 
-      <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8 lg:py-36">
-        <div className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-widest text-accent">
-            Trusted NEMT Provider
-          </p>
-          <h1 className="mt-4 text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl text-balance">
-            Safe. Reliable. Compassionate Medical Transportation.
-          </h1>
-          <p className="mt-6 text-lg leading-relaxed text-primary-foreground/80 max-w-xl">
-            Serving patients across multiple states with professional
-            non-emergency medical transport services. Over 4 years of trusted
-            service.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length)
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <section className="relative h-[80vh] min-h-[600px] overflow-hidden">
+      {/* Rotating Images */}
+      <AnimatePresence>
+        {images.map((img, i) =>
+          i === index ? (
+            <motion.div
+              key={i}
+              className="absolute inset-0"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1 }}
+            >
+              <Image
+                src={img}
+                alt="Shine NEMT transportation service"
+                fill
+                className="object-cover"
+              />
+            </motion.div>
+          ) : null
+        )}
+      </AnimatePresence>
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/50" />
+
+      {/* Content */}
+      <motion.div
+        className="relative mx-auto max-w-7xl px-4 h-full flex items-center"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <div className="max-w-2xl text-white">
+          <motion.p
+            className="text-sm font-semibold uppercase tracking-widest text-green-400"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            Trusted Non-Emergency Medical Transport
+          </motion.p>
+
+          <motion.h1
+            className="mt-4 text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            Caring transportation for the people who matter most.
+          </motion.h1>
+
+          <motion.p
+            className="mt-6 text-lg text-white/85 max-w-xl leading-relaxed"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+          >
+            Rest easy knowing your loved ones travel safely, comfortably,
+            and with dignity. For over 4 years, SHINE NEMT has treated every
+            passenger like a member of our own family.
+          </motion.p>
+
+          <motion.div
+            className="mt-8 flex flex-col sm:flex-row gap-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8 }}
+          >
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
+              className="bg-green-600 hover:bg-green-700 px-6 py-3 rounded-md text-sm font-semibold text-white transition"
             >
-              Contact Us
+              Schedule Transportation
             </Link>
+
             <Link
-              href="/become-a-driver"
-              className="inline-flex items-center justify-center rounded-md border border-primary-foreground/30 bg-primary-foreground/10 px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/20"
+              href="/services"
+              className="border border-white/40 px-6 py-3 rounded-md text-sm font-semibold text-white hover:bg-white/10 transition"
             >
-              Become a Driver
+              View Our Services
             </Link>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

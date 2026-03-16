@@ -85,26 +85,26 @@ export function Footer() {
             <ul className="mt-4 flex flex-col gap-3">
               <li>
                 <a
-                  href="tel:+1234567890"
+                  href="tel:+17032988700"
                   className="flex items-center gap-2.5 text-sm opacity-80 hover:opacity-100 transition-opacity"
                 >
                   <Phone className="h-4 w-4 shrink-0" />
-                  (123) 456-7890
+                  703-298-8700
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:info@shinellc.com"
+                  href="mailto:shinenemt@gmail.com"
                   className="flex items-center gap-2.5 text-sm opacity-80 hover:opacity-100 transition-opacity"
                 >
                   <Mail className="h-4 w-4 shrink-0" />
-                  info@shinellc.com
+                  shinenemt@gmail.com
                 </a>
               </li>
               <li>
                 <div className="flex items-start gap-2.5 text-sm opacity-80">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
-                  <span>Serving IL, IN, WI & MI</span>
+                  <span>Serving Virginia & Neighboring States</span>
                 </div>
               </li>
             </ul>

@@ -2,27 +2,28 @@ import { MapPin } from "lucide-react"
 import Link from "next/link"
 
 const areas = [
-  {
-    state: "Illinois",
-    description:
-      "Comprehensive coverage across the state including Chicago and surrounding metro areas.",
-  },
-  {
-    state: "Indiana",
-    description:
-      "Serving major cities and rural communities throughout Indiana for your medical transport needs.",
-  },
-  {
-    state: "Wisconsin",
-    description:
-      "Reliable medical transportation services available across Wisconsin communities.",
-  },
-  {
-    state: "Michigan",
-    description:
-      "Expanding our trusted services across Michigan to serve more patients every day.",
-  },
-]
+    {
+      state: "Virginia",
+      description:
+        "Serving communities across Virginia with reliable and compassionate non-emergency medical transportation.",
+    },
+    {
+      state: "West Virginia",
+      description:
+        "Providing dependable medical transportation services for patients traveling to and from medical appointments.",
+    },
+    {
+      state: "North Carolina",
+      description:
+        "Supporting patients and families with safe long-distance medical transport services.",
+    },
+    {
+      state: "Neighboring States",
+      description:
+        "SHINE NEMT also provides long-distance transportation to surrounding states when specialized care is needed.",
+    },
+  ]
+
 
 export function AreasSection() {
   return (

@@ -7,7 +7,6 @@ import { Menu, X, Phone } from "lucide-react"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 
-
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
@@ -22,36 +21,33 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <header className="sticky top-0 z-50 bg-white shadow-sm border-b">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between lg:h-20">
+        <div className="flex h-20 items-center justify-between">
+
           {/* Logo */}
-{/* Logo */}
-<Link
-  href="/"
-  className="flex items-center"
->
-  <Image
-    src="/images/logo.jpg"
-    alt="Shine LLC Logo"
-    width={200}
-    height={50}
-    priority
-    className="h-10 w-auto object-contain lg:h-12"
-  />
-</Link>
+          <Link href="/" className="flex items-center group">
+            <Image
+              src="/images/logo.png"
+              alt="Shine LLC Logo"
+              width={260}
+              height={70}
+              priority
+              className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
+          </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+          <nav className="hidden lg:flex items-center gap-2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "px-3 py-2 text-sm font-medium rounded-md transition-colors",
+                  "px-4 py-2 text-sm font-semibold rounded-md transition-all",
                   pathname === link.href
-                    ? "bg-secondary text-foreground"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                    ? "text-green-700 border-b-2 border-green-600"
+                    : "text-gray-700 hover:text-green-700"
                 )}
               >
                 {link.label}
@@ -60,71 +56,77 @@ export function Navbar() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-4">
+
             <a
-              href="tel:+1234567890"
-              className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              href="tel:7032988700"
+              className="flex items-center gap-2 text-sm font-semibold text-gray-700 hover:text-green-700 transition"
             >
               <Phone className="h-4 w-4" />
-              <span>(123) 456-7890</span>
+              <span>703-298-8700</span>
             </a>
+
             <Link
               href="/become-a-driver"
-              className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+              className="inline-flex items-center justify-center rounded-md bg-green-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-green-700"
             >
               Become a Driver
             </Link>
+
           </div>
 
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Toggle */}
           <button
-            className="lg:hidden inline-flex items-center justify-center rounded-md p-2 text-muted-foreground hover:bg-secondary hover:text-foreground transition-colors"
+            className="lg:hidden p-2 text-gray-700"
             onClick={() => setIsOpen(!isOpen)}
-            aria-expanded={isOpen}
-            aria-label="Toggle navigation menu"
           >
-            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
+
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden border-t border-border bg-background">
-          <nav className="mx-auto max-w-7xl px-4 py-4 sm:px-6" aria-label="Mobile navigation">
-            <div className="flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className={cn(
-                    "px-3 py-2.5 text-sm font-medium rounded-md transition-colors",
-                    pathname === link.href
-                      ? "bg-secondary text-foreground"
-                      : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
-                  )}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <div className="mt-3 pt-3 border-t border-border flex flex-col gap-3">
-                <a
-                  href="tel:+1234567890"
-                  className="flex items-center gap-2 px-3 text-sm font-medium text-muted-foreground"
-                >
-                  <Phone className="h-4 w-4" />
-                  <span>(123) 456-7890</span>
-                </a>
-                <Link
-                  href="/become-a-driver"
-                  onClick={() => setIsOpen(false)}
-                  className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-                >
-                  Become a Driver
-                </Link>
-              </div>
+        <div className="lg:hidden border-t bg-white">
+          <nav className="px-4 py-4 flex flex-col gap-2">
+
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className={cn(
+                  "px-3 py-2 text-sm font-medium rounded-md",
+                  pathname === link.href
+                    ? "text-green-700 font-semibold"
+                    : "text-gray-700 hover:text-green-700"
+                )}
+              >
+                {link.label}
+              </Link>
+            ))}
+
+            <div className="mt-4 pt-4 border-t flex flex-col gap-3">
+
+              <a
+                href="tel:7032988700"
+                className="flex items-center gap-2 text-sm font-medium text-gray-700"
+              >
+                <Phone className="h-4 w-4" />
+                <span>703-298-8700</span>
+              </a>
+
+              <Link
+                href="/become-a-driver"
+                onClick={() => setIsOpen(false)}
+                className="bg-green-600 text-white text-center py-2 rounded-md font-semibold"
+              >
+                Become a Driver
+              </Link>
+
             </div>
+
           </nav>
         </div>
       )}

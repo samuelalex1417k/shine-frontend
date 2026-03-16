@@ -9,9 +9,9 @@ import {
 const reasons = [
   {
     icon: Clock,
-    title: "4+ Years of Service",
+    title: "4 Years of Treating Every Patient Like Family",
     description:
-      "Established track record of providing safe and reliable medical transportation since 2020.",
+  "For over four years, we have proudly cared for every passenger as if they were a member of our own family."
   },
   {
     icon: Shield,
@@ -48,7 +48,7 @@ export function WhyChooseSection() {
             Why Us
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
-            Why Choose Shine LLC
+          Why Families Trust SHINE NEMT
           </h2>
         </div>
 
