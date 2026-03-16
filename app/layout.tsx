@@ -5,7 +5,11 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import "./globals.css"
 
+import { AccessibilityProvider } from "@/components/accessibility/AccessibilityProvider"
+import AccessibilityMenu from "@/components/accessibility/AccessibilityMenu"
+
 const _inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+
 const _dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-dm-sans",
@@ -46,17 +50,22 @@ export const viewport: Viewport = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en">
       <body className="font-sans antialiased">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <Analytics />
-      </body>
+
+<AccessibilityProvider>
+<Navbar />
+<main>{children}</main>
+<Footer />
+<AccessibilityMenu />
+<Analytics />
+</AccessibilityProvider>
+
+</body>
     </html>
   )
 }
