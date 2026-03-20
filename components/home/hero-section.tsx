@@ -7,8 +7,8 @@ import { motion, AnimatePresence } from "framer-motion"
 
 const images = [
   "/images/hero-care.jpg",
+  "/images/hero-care-2.jpg",
   "/images/shine-van-1.jpg",
-  "/images/shine-van-2.jpg",
 ]
 
 export function HeroSection() {

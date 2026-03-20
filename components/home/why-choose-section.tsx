@@ -59,7 +59,7 @@ export function WhyChooseSection() {
               className="flex gap-4 rounded-lg bg-card p-6 border border-border"
             >
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                <reason.icon className="h-5 w-5 text-primary" />
+                <reason.icon className="h-5 w-5 text-accent" />
               </div>
               <div>
                 <h3 className="font-semibold text-card-foreground">

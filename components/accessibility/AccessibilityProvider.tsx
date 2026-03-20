@@ -3,14 +3,14 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 
 export type AccessibilityState = {
-  contrast: 1 | 2 | 3;
-  textSize: 1 | 2 | 3;
+  contrast: 0 | 1 | 2 | 3;
+  textSize: 0 | 1 | 2 | 3;
   dyslexia: boolean;
   stopAnimations: boolean;
   hideImages: boolean;
   lineHeight: boolean;
   cursorBig: boolean;
-  textAlign: "left" | "center" | "right";
+  textAlign: "none" | "left" | "center" | "right";
   grayscale: boolean;
   invert: boolean;
   readingGuide: boolean;
@@ -22,14 +22,14 @@ type AccessibilityContextType = {
 };
 
 const defaultState: AccessibilityState = {
-  contrast: 1,
-  textSize: 1,
+  contrast: 0,
+  textSize: 0,
   dyslexia: false,
   stopAnimations: false,
   hideImages: false,
   lineHeight: false,
   cursorBig: false,
-  textAlign: "left",
+  textAlign: "none",
   grayscale: false,
   invert: false,
   readingGuide: false,

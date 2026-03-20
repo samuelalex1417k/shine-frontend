@@ -50,7 +50,7 @@ export function AreasSection() {
               className="rounded-lg border border-border bg-card p-6 text-center"
             >
               <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                <MapPin className="h-5 w-5 text-primary" />
+                <MapPin className="h-5 w-5 text-accent" />
               </div>
               <h3 className="mt-4 text-lg font-semibold text-card-foreground">
                 {area.state}
