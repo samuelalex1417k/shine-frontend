@@ -325,51 +325,51 @@ ACCESSIBILITY SYSTEM
 .acc-contrast-3 { filter: contrast(180%); }
 
 /* Text Size Levels */
-body.acc-text-1 { font-size: 105%; }
-body.acc-text-2 { font-size: 115%; }
-body.acc-text-3 { font-size: 130%; }
+.content-area.acc-text-1 { font-size: 105%; }
+.content-area.acc-text-2 { font-size: 115%; }
+.content-area.acc-text-3 { font-size: 130%; }
 
 /* Dyslexia Friendly */
-body.acc-dyslexia, body.acc-dyslexia * {
+.content-area.acc-dyslexia, .content-area.acc-dyslexia * {
   font-family: Arial, Verdana, sans-serif !important;
   letter-spacing: 0.08em;
   word-spacing: 0.16em;
 }
 
 /* Stop Animations */
-body.acc-stop-animations *,
-body.acc-stop-animations *::before,
-body.acc-stop-animations *::after {
+.content-area.acc-stop-animations *,
+.content-area.acc-stop-animations *::before,
+.content-area.acc-stop-animations *::after {
   animation: none !important;
   transition: none !important;
 }
 
 /* Hide Images */
-body.acc-hide-images img { display: none !important; }
+.content-area.acc-hide-images img { display: none !important; }
 
 /* Link Highlight */
-body.acc-highlight-links a {
+.content-area.acc-highlight-links a {
   text-decoration: underline !important;
   font-weight: 600;
 }
 
 /* Line Height (global) */
-body.acc-line-height,
-body.acc-line-height * {
+.content-area.acc-line-height,
+.content-area.acc-line-height * {
   line-height: 1.8 !important;
 }
 
 /* Cursor */
-body.acc-cursor-big { cursor: zoom-in; }
+.content-area.acc-cursor-big { cursor: zoom-in; }
 
 /* Text Alignment */
-body.acc-align-left { text-align: left; }
-body.acc-align-center { text-align: center; }
-body.acc-align-right { text-align: right; }
+.content-area.acc-align-left { text-align: left; }
+.content-area.acc-align-center { text-align: center; }
+.content-area.acc-align-right { text-align: right; }
 
 /* Grayscale / Inverted */
-body.acc-grayscale { filter: grayscale(100%) !important; }
-body.acc-invert { filter: invert(100%) !important; }
+.content-area.acc-grayscale { filter: grayscale(100%) !important; }
+.content-area.acc-invert { filter: invert(100%) !important; }
 
 /* Reading Guide */
 .reading-guide {

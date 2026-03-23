@@ -56,16 +56,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans antialiased">
-
-<AccessibilityProvider>
-<Navbar />
-<main>{children}</main>
-<Footer />
-<AccessibilityMenu />
-<Analytics />
-</AccessibilityProvider>
-
-</body>
+        <AccessibilityProvider>
+          <div className="content-area">
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </div>
+          <AccessibilityMenu />
+        </AccessibilityProvider>
+      </body>
     </html>
   )
 }

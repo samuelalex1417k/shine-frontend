@@ -55,10 +55,11 @@ export const AccessibilityProvider = ({ children }: { children: ReactNode }) => 
   useEffect(() => {
     localStorage.setItem("accessibilityState", JSON.stringify(state));
 
-    const body = document.body;
+    const contentArea = document.querySelector('.content-area') as HTMLElement;
+    if (!contentArea) return;
 
     // Remove all classes first
-    body.classList.remove(
+    contentArea.classList.remove(
       "acc-contrast-1","acc-contrast-2","acc-contrast-3",
       "acc-text-1","acc-text-2","acc-text-3",
       "acc-dyslexia","acc-stop-animations","acc-hide-images",
@@ -68,17 +69,17 @@ export const AccessibilityProvider = ({ children }: { children: ReactNode }) => 
     );
 
     // Apply new classes
-    body.classList.add(`acc-contrast-${state.contrast}`);
-    body.classList.add(`acc-text-${state.textSize}`);
-    if(state.dyslexia) body.classList.add("acc-dyslexia");
-    if(state.stopAnimations) body.classList.add("acc-stop-animations");
-    if(state.hideImages) body.classList.add("acc-hide-images");
-    if(state.lineHeight) body.classList.add("acc-line-height");
-    if(state.cursorBig) body.classList.add("acc-cursor-big");
-    body.classList.add(`acc-align-${state.textAlign}`);
-    if(state.grayscale) body.classList.add("acc-grayscale");
-    if(state.invert) body.classList.add("acc-invert");
-    if(state.readingGuide) body.classList.add("acc-reading-guide");
+    contentArea.classList.add(`acc-contrast-${state.contrast}`);
+    contentArea.classList.add(`acc-text-${state.textSize}`);
+    if(state.dyslexia) contentArea.classList.add("acc-dyslexia");
+    if(state.stopAnimations) contentArea.classList.add("acc-stop-animations");
+    if(state.hideImages) contentArea.classList.add("acc-hide-images");
+    if(state.lineHeight) contentArea.classList.add("acc-line-height");
+    if(state.cursorBig) contentArea.classList.add("acc-cursor-big");
+    contentArea.classList.add(`acc-align-${state.textAlign}`);
+    if(state.grayscale) contentArea.classList.add("acc-grayscale");
+    if(state.invert) contentArea.classList.add("acc-invert");
+    if(state.readingGuide) contentArea.classList.add("acc-reading-guide");
   }, [state]);
 
   const setState = (newState: Partial<AccessibilityState>) => {
