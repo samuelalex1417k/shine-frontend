@@ -106,7 +106,7 @@ export default function ContactPage() {
                     variants={item}
                   >
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                      <info.icon className="h-5 w-5 text-primary" />
+                      <info.icon className="h-5 w-5 text-accent-foreground" />
                     </div>
                     <div>
                       <h3 className="text-sm font-semibold text-card-foreground">

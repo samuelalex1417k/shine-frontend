@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 
 export function CtaSection() {
   return (
-    <section className="bg-primary py-16 sm:py-20">
+    <section className="bg-accent-foreground py-16 sm:py-20">
       <motion.div
         className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center"
         initial={{ opacity: 0, y: 30 }}
@@ -15,7 +15,7 @@ export function CtaSection() {
       >
         {/* TITLE */}
         <motion.h2
-          className="text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl text-balance"
+          className="text-3xl font-bold tracking-tight text-secondary sm:text-4xl text-balance"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
@@ -26,7 +26,7 @@ export function CtaSection() {
 
         {/* TEXT */}
         <motion.p
-          className="mt-4 text-lg text-primary-foreground/80 max-w-2xl mx-auto leading-relaxed"
+          className="mt-4 text-lg text-secondary/80 max-w-2xl mx-auto leading-relaxed"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: false }}
@@ -47,7 +47,7 @@ export function CtaSection() {
         >
           <Link
             href="/become-a-driver"
-            className="inline-flex items-center justify-center rounded-md bg-accent px-8 py-3 text-sm font-semibold text-accent-foreground transition hover:bg-accent/90 hover:scale-[1.05]"
+            className="inline-flex items-center justify-center rounded-md bg-accent px-8 py-3 text-sm font-semibold text-primary transition hover:bg-accent/90 hover:scale-[1.05]"
           >
             Apply Now
           </Link>

@@ -146,7 +146,7 @@ export default function FleetPage() {
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-flex items-center justify-center rounded-md bg-accent px-8 py-3 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
+            className="mt-8 inline-flex items-center justify-center rounded-md bg-accent px-8 py-3 text-sm font-semibold text-primary transition-colors hover:bg-accent/90"
           >
             Contact Us
           </Link>

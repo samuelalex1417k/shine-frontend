@@ -6,7 +6,7 @@ interface PageHeaderProps {
 
 export function PageHeader({ title, subtitle, label }: PageHeaderProps) {
   return (
-    <section className="bg-primary py-14 sm:py-18 lg:py-20">
+    <section className="bg-accent-foreground py-14 sm:py-18 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
         {label && (
           <p className="text-sm font-semibold uppercase tracking-widest text-accent">

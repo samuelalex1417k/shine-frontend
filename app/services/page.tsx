@@ -147,7 +147,7 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-primary py-14 sm:py-16">
+      <section className="bg-accent-foreground py-14 sm:py-16">
         <motion.div
           className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -163,7 +163,7 @@ export default function ServicesPage() {
           </p>
           <Link
             href="/contact"
-            className="mt-8 inline-flex items-center justify-center rounded-md bg-accent px-8 py-3 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
+            className="mt-8 inline-flex items-center justify-center rounded-md bg-accent px-8 py-3 text-sm font-semibold text-primary transition-colors hover:bg-accent/90"
           >
             Schedule a Ride
           </Link>

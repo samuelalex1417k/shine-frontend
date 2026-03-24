@@ -20,7 +20,7 @@
   --muted: oklch(0.96 0.01 230);
   --muted-foreground: oklch(0.45 0.02 255);
   --accent: oklch(0.65 0.15 155);
-  --accent-foreground: oklch(0.99 0 0);
+  --accent-foreground: oklch(31.483% 0.06395 156.968);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
   --border: oklch(0.91 0.01 230);
@@ -146,13 +146,13 @@ ACCESSIBILITY WIDGET & DASHBOARD
   height: 58px;
   border-radius: 50%;
   border: none;
-  background: #0f1b3d;
+  background: #d8ca0a;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 20px rgba(216, 202, 12, 0.381);
   transition: transform 0.3s;
   z-index: 10001;
 }
@@ -181,7 +181,7 @@ ACCESSIBILITY WIDGET & DASHBOARD
   width: 340px;
   background: white;
   border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  box-shadow: 0 20px 40px rgba(203, 181, 8, 0.25);
   padding: 20px;
   display: none;
   transform-origin: bottom right;
@@ -217,7 +217,7 @@ ACCESSIBILITY WIDGET & DASHBOARD
 }
 
 .acc-card.active {
-  background: #0f1b3d;
+  background: #d8ca0a;
   color: white;
 }
 
@@ -240,7 +240,7 @@ ACCESSIBILITY WIDGET & DASHBOARD
 }
 
 .indicator .dot.active {
-  background: #0f1b3d;
+  background: #d8ca0a;
 }
 
 /* Responsive adjustments */

@@ -161,7 +161,7 @@ export default function AboutPage() {
                 whileHover={{ y: -4 }}
               >
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                  <value.icon className="h-5 w-5 text-primary" />
+                  <value.icon className="h-5 w-5 text-accent-foreground" />
                 </div>
 
                 <div>
@@ -180,7 +180,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Banner */}
-      <section className="bg-primary py-14 sm:py-16">
+      <section className="bg-accent-foreground py-14 sm:py-16">
         <motion.div
           className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
           initial="hidden"

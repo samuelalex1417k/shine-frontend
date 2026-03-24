@@ -11,16 +11,6 @@ const areas = [
       "Serving communities across Virginia with reliable and compassionate non-emergency medical transportation.",
   },
   {
-    state: "West Virginia",
-    description:
-      "Providing dependable medical transportation services for patients traveling to and from medical appointments.",
-  },
-  {
-    state: "North Carolina",
-    description:
-      "Supporting patients and families with safe long-distance medical transport services.",
-  },
-  {
     state: "Neighboring States",
     description:
       "SHINE NEMT also provides long-distance transportation to surrounding states when specialized care is needed.",
@@ -57,7 +47,7 @@ export function AreasSection() {
 
         {/* CARDS */}
         <motion.div
-          className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 max-w-3xl mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false }}
@@ -73,7 +63,7 @@ export function AreasSection() {
           {areas.map((area) => (
             <motion.div
               key={area.state}
-              className="rounded-lg border border-border bg-card p-6 text-center transition hover:shadow-md"
+              className="w-full max-w-sm mx-auto rounded-lg border border-border bg-card p-6 text-center transition hover:shadow-md"
               variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 },
