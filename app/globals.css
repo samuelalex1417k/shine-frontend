@@ -146,18 +146,19 @@ ACCESSIBILITY WIDGET & DASHBOARD
   height: 58px;
   border-radius: 50%;
   border: none;
-  background: #d8ca0a;
-  color: white;
+  background: #f4c430;
+  color: #f4c430;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(216, 202, 12, 0.381);
-  transition: transform 0.3s;
+  box-shadow: 0 8px 20px rgba(244, 196, 48, 0.45);
+  transition: transform 0.3s, box-shadow 0.3s;
   z-index: 10001;
 }
 .accessibility-trigger:hover {
   transform: scale(1.05);
+  box-shadow: 0 10px 24px rgba(244, 196, 48, 0.6);
 }
 
 /* Pop-out animation */
@@ -181,7 +182,7 @@ ACCESSIBILITY WIDGET & DASHBOARD
   width: 340px;
   background: white;
   border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(203, 181, 8, 0.25);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
   padding: 20px;
   display: none;
   transform-origin: bottom right;
@@ -248,7 +249,7 @@ ACCESSIBILITY WIDGET & DASHBOARD
   .accessibility-drawer {
     width: calc(100vw - 50px);
     right: 100vw; 
-    bottom: 80px; /
+    bottom: 80px; />
   }
   .accessibility-drawer.open {
     right: 25px;
@@ -325,9 +326,9 @@ ACCESSIBILITY SYSTEM
 .acc-contrast-3 { filter: contrast(180%); }
 
 /* Text Size Levels */
-.content-area.acc-text-1 { font-size: 105%; }
-.content-area.acc-text-2 { font-size: 115%; }
-.content-area.acc-text-3 { font-size: 130%; }
+.acc-text-1 { font-size: 105%; }
+.acc-text-2 { font-size: 115%; }
+.acc-text-3 { font-size: 130%; }
 
 /* Dyslexia Friendly */
 .content-area.acc-dyslexia, .content-area.acc-dyslexia * {
@@ -408,23 +409,48 @@ ACCESSIBILITY WIDGET
   height: 58px;
   border-radius: 50%;
   border: none;
-  background: #0f1b3d;
-  color: white;
+  background: #f4c430;
+  color: #19212d;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  transition: transform 0.3s;
+  box-shadow: 0 8px 20px rgba(244, 196, 48, 0.45);
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
   z-index: 10001;
 }
-.accessibility-trigger:hover { transform: scale(1.05); }
+.accessibility-trigger:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 24px rgba(244, 196, 48, 0.6);
+}
+.accessibility-trigger:active {
+  background: #f7d34b;
+  box-shadow: 0 6px 16px rgba(244, 196, 48, 0.55);
+}
+
+.acc-card.active {
+  background: #f4c430;
+  color: #19212d;
+  border: 1px solid #dcae2a;
+}
+
+.acc-card:hover {
+  background: #f6d738;
+}
 
 /* Pop-out animation */
 @keyframes popOut {
-  0% { transform: scale(0.3); opacity: 0; }
-  80% { transform: scale(1.05); opacity: 1; }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .accessibility-drawer {
@@ -466,7 +492,7 @@ ACCESSIBILITY WIDGET
   transition: 0.2s;
 }
 .acc-card:hover { background: #e9e9e9; }
-.acc-card.active { background: #0f1b3d; color: white; }
+.acc-card.active { background: #f6d738; color: white; }
 .acc-card span { font-weight: 600; font-size: 13px; }
 .acc-card small { font-size: 11px; opacity: .7; }
 
@@ -483,7 +509,7 @@ ACCESSIBILITY WIDGET
   background: #ccc;
 }
 .indicator .dot.active {
-  background: #0f1b3d;
+  background: #fdfdfd;
 }
 
 /* Reading Guide */
