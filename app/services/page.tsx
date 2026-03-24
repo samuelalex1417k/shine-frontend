@@ -1,4 +1,5 @@
-import type { Metadata } from "next"
+"use client"
+
 import { PageHeader } from "@/components/page-header"
 import Link from "next/link"
 import {
@@ -9,12 +10,7 @@ import {
   Route,
   CheckCircle2,
 } from "lucide-react"
-
-export const metadata: Metadata = {
-  title: "Services",
-  description:
-    "Explore our comprehensive non-emergency medical transportation services including wheelchair transport, stretcher transport, dialysis appointments, and more.",
-}
+import { motion } from "framer-motion"
 
 const services = [
   {
@@ -93,15 +89,20 @@ export default function ServicesPage() {
         subtitle="We offer a full range of non-emergency medical transportation services designed to meet the unique needs of every patient we serve."
       />
 
+      {/* Services */}
       <section className="bg-background py-16 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-16">
             {services.map((service, index) => (
-              <div
+              <motion.div
                 key={service.title}
                 className={`flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-12 ${
                   index % 2 === 1 ? "lg:flex-row-reverse" : ""
                 }`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.2 }}
+                viewport={{ once: false }}
               >
                 <div className="lg:w-1/2">
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
@@ -116,7 +117,13 @@ export default function ServicesPage() {
                 </div>
 
                 <div className="lg:w-1/2">
-                  <div className="rounded-lg border border-border bg-card p-6">
+                  <motion.div
+                    className="rounded-lg border border-border bg-card p-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.25 + 0.1 }}
+                    viewport={{ once: false }}
+                  >
                     <h3 className="text-sm font-semibold uppercase tracking-wider text-card-foreground">
                       Service Features
                     </h3>
@@ -131,9 +138,9 @@ export default function ServicesPage() {
                         </li>
                       ))}
                     </ul>
-                  </div>
+                  </motion.div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -141,13 +148,18 @@ export default function ServicesPage() {
 
       {/* CTA */}
       <section className="bg-primary py-14 sm:py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+        <motion.div
+          className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          viewport={{ once: false }}
+        >
           <h2 className="text-2xl font-bold text-primary-foreground sm:text-3xl text-balance">
             Need Transportation for Your Next Appointment?
           </h2>
           <p className="mt-4 text-primary-foreground/80 max-w-xl mx-auto leading-relaxed">
-            Contact us today to schedule your non-emergency medical
-            transportation. We are here to help.
+            Contact us today to schedule your non-emergency medical transportation. We are here to help.
           </p>
           <Link
             href="/contact"
@@ -155,7 +167,7 @@ export default function ServicesPage() {
           >
             Schedule a Ride
           </Link>
-        </div>
+        </motion.div>
       </section>
     </>
   )

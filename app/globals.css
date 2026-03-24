@@ -342,6 +342,16 @@ ACCESSIBILITY SYSTEM
 .content-area.acc-stop-animations *::after {
   animation: none !important;
   transition: none !important;
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+.content-area.acc-stop-animations {
+  scroll-behavior: auto !important;
 }
 
 /* Hide Images */

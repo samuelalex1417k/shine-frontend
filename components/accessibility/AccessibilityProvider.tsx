@@ -1,6 +1,7 @@
 "use client"
 
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import { MotionConfig } from "framer-motion";
 
 export type AccessibilityState = {
   contrast: 0 | 1 | 2 | 3;
@@ -88,7 +89,12 @@ export const AccessibilityProvider = ({ children }: { children: ReactNode }) => 
 
   return (
     <AccessibilityContext.Provider value={{ state, setState }}>
-      {children}
+      <MotionConfig
+        reducedMotion={state.stopAnimations ? "always" : "user"}
+        skipAnimations={state.stopAnimations}
+      >
+        {children}
+      </MotionConfig>
     </AccessibilityContext.Provider>
   );
 };
