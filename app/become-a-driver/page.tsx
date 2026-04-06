@@ -105,7 +105,7 @@ export default function BecomeADriverPage() {
 
               <motion.div
                 variants={item}
-                className="mt-6 rounded-lg bg-primary p-6"
+                className="mt-6 rounded-lg bg-accent-foreground p-6"
               >
                 <h3 className="text-sm font-semibold text-primary-foreground">
                   Questions?

@@ -134,16 +134,16 @@ export function DriverApplicationForm() {
             return (
               <div key={label} className="flex flex-1 flex-col items-center">
                 <div className="flex items-center w-full">
-                  {index > 0 && <div className={cn("h-0.5 flex-1", isComplete || isActive ? "bg-primary" : "bg-border")} />}
+                  {index > 0 && <div className={cn("h-0.5 flex-1", isComplete || isActive ? "bg-green-600" : "bg-border")} />}
                   <div className={cn(
                     "flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-semibold transition-colors",
                     isComplete || isActive
-                      ? "bg-primary text-primary-foreground"
+                      ? "bg-green-600 text-primary-foreground"
                       : "bg-secondary text-muted-foreground border border-border"
                   )}>
                     {isComplete ? <CheckCircle2 className="h-4 w-4" /> : stepNum}
                   </div>
-                  {index < stepLabels.length - 1 && <div className={cn("h-0.5 flex-1", isComplete ? "bg-primary" : "bg-border")} />}
+                  {index < stepLabels.length - 1 && <div className={cn("h-0.5 flex-1", isComplete ? "bg-green-600" : "bg-border")} />}
                 </div>
                 <span className={cn("mt-2 text-xs font-medium hidden sm:block", isActive ? "text-foreground" : isComplete ? "text-primary" : "text-muted-foreground")}>{label}</span>
               </div>
@@ -220,7 +220,7 @@ export function DriverApplicationForm() {
           ) : <div />}
 
           {step < TOTAL_STEPS ? (
-            <button type="button" onClick={nextStep} className="px-4 py-2 bg-primary text-white rounded">Next</button>
+            <button type="button" onClick={nextStep} className="px-4 py-2 bg-accent-foreground text-white rounded">Next</button>
           ) : (
             <button type="submit" className="px-4 py-2 bg-accent text-white rounded">Submit Application</button>
           )}
