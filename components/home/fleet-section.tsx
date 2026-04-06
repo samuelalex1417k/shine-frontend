@@ -6,11 +6,11 @@ import { motion } from "framer-motion"
 
 const fleetImages = [
   {
-    src: "/images/fleet-1.jpg",
+    src: "/images/fleet-1.png",
     alt: "Wheelchair accessible medical transport van",
   },
   {
-    src: "/images/fleet-2.jpg",
+    src: "/images/fleet-2.png",
     alt: "Stretcher-equipped medical transport vehicle",
   },
   {
@@ -18,7 +18,7 @@ const fleetImages = [
     alt: "Fleet of medical transport vans",
   },
   {
-    src: "/images/fleet-4.jpg",
+    src: "/images/fleet-4.png",
     alt: "Clean interior of medical transport van",
   },
 ]
